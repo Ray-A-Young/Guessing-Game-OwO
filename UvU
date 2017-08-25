@@ -1,0 +1,60 @@
+import java.util.Scanner; //need scanner class to read user input
+
+class guessinggame
+{
+  public static void main(String [] args)
+  {
+	  		//This is to loop back to beginning  
+	  while (true)
+	  {
+		  System.out.println("Welcome to the guessing game! Pick a maximum guess please, M'lord UvU");
+		 
+		  Scanner cin = new Scanner(System.in);
+		  
+		  int max = cin.nextInt();
+		  
+		  System.out.println("Alright sir, please put in your guess! OwO");
+		  
+		  	//This is to set a max number
+		  
+		  int random = (int)(1+max*Math.random());
+		  
+		  
+		  while (true)
+		  {
+			  int guess = cin.nextInt();
+			  
+			  if (guess == random)
+			  {
+				  System.out.println("You got the number! O.O Do you want to go again, sir? Y/N");
+				 //so lower case and upper can work
+				  String answer = cin.next().toUpperCase();
+				//play again responses
+					  if (answer.equals("Y"))
+					  {
+						  System.out.println("Yes, master~!");
+						  //breaking the loop
+						  break;
+					  } 
+					  else
+					  {
+						  System.out.println("Goodbye, sir Q^Q!");
+						  System.exit(0);
+					  }
+				//too high and low  
+			  }
+			  else if (guess > random)
+			  {
+				  System.out.println("Too high, sir! >.>");
+			  }
+			  else if (guess < random)
+			  {
+				  System.out.println("Too low, sir! <.<");
+			  }
+
+		  }
+  		}
+	  
+	  } 
+}
+				//Coded, Ray Young
